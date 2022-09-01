@@ -79,8 +79,9 @@ WSGI_APPLICATION = 'turismo_real.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
-        'NAME': '127.0.0.1:1521/xe', # ip/nombre bd
-        #'NAME': '192.168.1.87:1521/xe', # ip/nombre bd
+        'NAME': '127.0.0.1:1521/xe', # LOCALHOST
+        #'NAME': '192.168.1.92:1521/xe', # vaio 1
+        #'NAME': '201.188.196.61:1521/xe', # vaio 2
         'USER': 'turismoreal', # nombre de usuario existente en bd oracle
         'PASSWORD': 'turismoreal', # password de usuario existente en bd oracle
         'TEST': {

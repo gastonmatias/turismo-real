@@ -1,5 +1,14 @@
-turismo_real/__pycache__
+__pycache__/
 
-arriendo/__pycache__
+*.py[cod]
 
-arriendo/migrations/__pycache__
+#turismo_real/__pycache__
+
+#arriendo/__pycache__
+
+#arriendo/migrations/__pycache__
+
+#./__pycache__/
+
+#arriendo/migrations/*
+
