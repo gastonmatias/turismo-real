@@ -78,8 +78,16 @@ WSGI_APPLICATION = 'turismo_real.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': '127.0.0.1:1521/xe', # ip/nombre bd
+        #'NAME': '192.168.1.87:1521/xe', # ip/nombre bd
+        'USER': 'turismoreal', # nombre de usuario existente en bd oracle
+        'PASSWORD': 'turismoreal', # password de usuario existente en bd oracle
+        'TEST': {
+            'USER': 'default_test',
+            'TBLSPACE': 'default_test_tbls',
+            'TBLSPACE_TMP': 'default_test_tbls_tmp',
+        },
     }
 }
 
