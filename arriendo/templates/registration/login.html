@@ -1,12 +1,49 @@
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingreso al sistema</title>
+    <link rel="stylesheet" href="{% static 'arriendo/css/login.css' %}">
+    
+    <!-- boostrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Login</title>
 </head>
 <body>
+
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+          <h2 class="active"> Iniciar Sesión </h2>
+          <!-- <h2 class="inactive underlineHover">Registrarse </h2> -->
+      
+          <!-- Icon -->
+          <div class="fadeIn first">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/OOjs_UI_icon_userAvatar.svg/2048px-OOjs_UI_icon_userAvatar.svg.png" 
+                id="icon" alt="User Icon"
+                />
+          </div>
+      
+          <!-- Login Form -->
+          <form>
+            <input type="text" id="login" class="fadeIn second" name="login" placeholder="Email">
+            <input type="text" id="password" class="fadeIn third" name="login" placeholder="Contraseña">
+            <input type="submit" class="fadeIn fourth" value="Log In">
+          </form>
+      
+          <!-- Registro -->
+          <div id="formFooter">
+            <a class="underlineHover" href="#">No tienes una cuenta? Regístrate Aquí</a>
+          </div>
+      
+        </div>
+      </div>
     
+
 </body>
 </html>
+
+

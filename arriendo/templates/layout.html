@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo_pagina %} {% endblock%}</title>
+	<!--css de layout.html padre-->
+    <link rel="stylesheet" href="{% static 'arriendo/css/layout.css' %}">
+
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--Css de cada html hijo-->
+    {% block css %}
+    {% endblock %}
+</head>
+
+<body>
+    <div class="container">
+
+      
+        <nav class="navbar navbar-dark navbar-expand-md bg-dark">
+            <div class="container-fluid">
+                
+                <!-- INIT LOGO  -->
+                <a class="navbar-brand" href="#">
+                    <img src={% static 'img/logo1.jpg' %} alt="tr"  width="100" height="24" 
+                    class="d-inline-block align-text-top img-fluid rounded"/>
+                </a><!-- FIN LOGO  -->
+    
+                <!-- BTN SANDWICH -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button><!-- END SANDWICH -->
+    
+                <!-- INIT elementos nav -->
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Reservas</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Departamentos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
+                        </li>
+                    </ul>
+                </div><!-- FIN elementos nav -->
+            </div>
+        </nav>
+    </header>
+
+    {% block contenido %}
+        <!--todo el codigo de las demas paginas hijas irá aqui-->
+    {% endblock %}
+
+    <!--bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+    </div><!-- FIN class container -->
+
+</body>
+
+</html>
