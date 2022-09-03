@@ -1,13 +1,12 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser
 
-class User(AbstractBaseUser):
+""" class User(AbstractBaseUser):
     id = models.BigAutoField('Id usuario',primary_key=True)
-    email = models.CharField('Email',max_length=100,unique=True)
-    rut = models.CharField('Rut',max_length=100)
-    name = models.CharField('Nombre',max_length=100)
-    last_name = models.CharField('Apellido',max_length=100)
-    password = models.CharField(max_length=100)
+    email = models.CharField('Email',max_length=100,null=False, blank=False,unique=True)
+    rut = models.CharField('Rut',max_length=100,null=False, blank=False)
+    name = models.CharField('Nombre',max_length=100,null=False, blank=False)
+    last_name = models.CharField('Apellido',max_length=100,null=False, blank=False)
+    password = models.CharField(max_length=100,null=False, blank=False)
     regular_customer = models.BooleanField(blank=True,null=True)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
@@ -25,6 +24,6 @@ class User(AbstractBaseUser):
     def has_module_perms(self,app_label):
         return True
 
-
+ """
 
 
