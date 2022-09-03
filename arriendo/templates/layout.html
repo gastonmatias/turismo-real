@@ -47,9 +47,26 @@
                         <li class="nav-item">
                           <a class="nav-link" href="#">Departamentos</a>
                         </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            
+                            <a class="nav-link"href="#" >@{{user.username}}</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link"href="{% url 'logout' %}">Cerrar Sesión</a>
+                        </li>
+                  
+                   
+                        {%else %}
+
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
                         </li>
+
+                   
+                        {%endif %}
+     
                     </ul>
                 </div><!-- FIN elementos nav -->
             </div>

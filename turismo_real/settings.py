@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = '/home'
+LOGOUT_REDIRECT_URL = '/home'
+
 
 # Application definition
 
@@ -40,8 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # custom apps
-    'arriendo'
+    'arriendo',
+    
+    # para customizar forms con boostrap
+    'crispy_forms'
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -79,19 +87,11 @@ WSGI_APPLICATION = 'turismo_real.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': '127.0.0.1:1521/xe', # url _oracle/version_oracle_instalada
-        #'NAME': '192.168.1.92:1521/xe', # vaio 1
-        #'NAME': '201.188.196.61:1521/xe', # vaio 2
-        'USER': 'turismoreal', # nombre de usuario existente en bd oracle
-        'PASSWORD': 'turismoreal', # password de usuario existente en bd oracle
-        'TEST': {
-            'USER': 'default_test',
-            'TBLSPACE': 'default_test_tbls',
-            'TBLSPACE_TMP': 'default_test_tbls_tmp',
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'turismorealDB.db',
     }
 }
+
 
 
 # Password validation
