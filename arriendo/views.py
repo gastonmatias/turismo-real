@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from .forms import CustomUserCreationForm
 from django.contrib.auth import authenticate, login
 
+# para manejo de permisos segun perfil
+from django.contrib.auth.decorators import permission_required
+
 def home(request):
     return render(request,'home.html')
 
