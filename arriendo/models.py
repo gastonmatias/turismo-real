@@ -37,9 +37,6 @@ class Department(models.Model):
     def __str__(self):
         return f'Depto: {self.commune}, Precio: {self.price}'
 
-
-
-
 """ class User(AbstractBaseUser):
     id = models.BigAutoField('Id usuario',primary_key=True)
     email = models.CharField('Email',max_length=100,null=False, blank=False,unique=True)
