@@ -18,7 +18,7 @@ class Region(models.Model):
         return self.region
 
 class Commune(models.Model):
-    id_region = models.ForeignKey(Region, on_delete=models.CASCADE, related_name='id_region_fk', default=None)
+    region = models.ForeignKey(Region, on_delete=models.CASCADE, related_name='id_region_fk', default=None)
     commune = models.CharField(max_length=100, null=False)
     class Meta:
         db_table = 'commune'
@@ -147,11 +147,12 @@ class DepartmentType(models.Model):
         return self.description        
 
 class Department(models.Model):
-    commune_id = models.ForeignKey(Commune, on_delete=models.CASCADE, related_name='department_commune_id_fk', default=None)
-    department_type_id = models.ForeignKey(DepartmentType, on_delete=models.CASCADE, related_name='department_type_id_fk', default=None)
+    commune = models.ForeignKey(Commune, on_delete=models.CASCADE, related_name='department_commune_id_fk', default=None)
+    department_type = models.ForeignKey(DepartmentType, on_delete=models.CASCADE, related_name='department_type_id_fk', default=None)
     address = models.CharField(max_length=100, null=False)
     status = models.BooleanField(default=False)
     qty_rooms = models.IntegerField(default=0, null=False)
+    capacity = models.IntegerField(default=0, null=False)
     price = models.IntegerField(default=0, null=False)
     short_description = models.CharField(max_length=100,default='3B')
     long_description  = models.CharField(max_length=255,default='Bueno bonito barato')
@@ -162,7 +163,7 @@ class Department(models.Model):
         ordering = ['id']
     
     def __str__(self):
-        return f'{self.commune_id.commune}, {self.address}'
+        return f'{self.commune.commune}, {self.address}'
 
 class DepartmentMaintenance(models.Model):
     maintenance_date = models.DateField(null=False)
