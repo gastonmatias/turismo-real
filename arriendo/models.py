@@ -1,4 +1,4 @@
-from django.db import models
+""" from django.db import models
 
 class Region(models.Model):
     id = models.BigAutoField(primary_key=True) 
@@ -35,7 +35,7 @@ class Department(models.Model):
     price = models.BigIntegerField()
 
     def __str__(self):
-        return f'Depto: {self.commune}, Precio: {self.price}'
+        return f'Depto: {self.commune}, Precio: {self.price}' """
 
 """ class User(AbstractBaseUser):
     id = models.BigAutoField('Id usuario',primary_key=True)

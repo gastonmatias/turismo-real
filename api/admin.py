@@ -7,3 +7,18 @@ from django.contrib import admin
 #
 #admin.site.unregister(token_blacklist.models.OutstandingToken)
 #admin.site.register(token_blacklist.models.OutstandingToken, OutstandingTokenAdmin)   
+
+from django.contrib import admin
+#from .models import User
+from django.contrib.auth.models import User
+from api.models import Region,Commune,DepartmentType,Department,Services,Reservation,ServicesType
+
+# Register your models here.
+#admin.site.register(User)
+admin.site.register(Region)
+admin.site.register(Commune)
+admin.site.register(DepartmentType)
+admin.site.register(Department)
+admin.site.register(Services)
+admin.site.register(ServicesType)
+admin.site.register(Reservation)
