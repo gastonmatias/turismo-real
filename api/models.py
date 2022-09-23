@@ -153,6 +153,10 @@ class Department(models.Model):
     status = models.BooleanField(default=False)
     qty_rooms = models.IntegerField(default=0, null=False)
     price = models.IntegerField(default=0, null=False)
+    short_description = models.CharField(max_length=100,default='3B')
+    long_description  = models.CharField(max_length=255,default='Bueno bonito barato')
+    link_img = models.CharField(max_length=255, null=True) # imgs de 1024x768 plis!
+
     class Meta:
         db_table = 'department'
         ordering = ['id']
